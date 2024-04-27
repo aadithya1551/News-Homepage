@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="icon" type="image" href="images/favicon-32x32.png">
+   <title>Frontend Mentor News Homepage Main</title>
+   <link rel="stylesheet" href="output.css">
+   <style>
+      #lash {
+         visibility: hidden;
+         height: 10px;
+      }
+
+      #desk-view {
+         visibility: visible;
+         z-index: 2;
+      }
+
+      #mobile-view {
+         height: 10px;
+         width: 10px;
+         visibility: hidden;
+         z-index: 1;
+      }
+
+      #close{
+         visibility: hidden;
+      }
+
+      @media screen and (max-width: 650px) {
+         #lash {
+            visibility: visible;
+            position: relative;
+            left: 545px;
+            bottom: 60px;
+            z-index: 0;
+         }
+
+         #desk-view {
+            visibility: hidden;
+            height: 10px;
+            width: 10px;
+            position: relative;
+            top: 50px;
+         }
+
+         #mobile-view {
+            height: auto;
+            width: auto;
+            visibility: visible;
+         }
+         #menu{
+            visibility: hidden;
+            position: absolute;
+            left: 130px;
+            bottom: 100px;
+            flex-direction: column;
+            background-color: white;
+            height: 500px;
+            width: 190px;
+            padding: 20px;
+         }
+         #close{
+            position: relative;
+            visibility: inherit;
+            object-fit: cover;
+            margin-top: 30px;
+            margin-left: 130px;
+            margin-bottom: 55px;
+         }
+         
+         #menu li{
+            margin-top: 10px;
+            margin-bottom: 10px;
+           
+         }
+      }
+   </style>
+
+</head>
+
+<body id="body" class="p-7 max-sm:max-w-full max-sm:p-4">
+   <!-- NAVIGATION -->
+   <div class="flex justify-between py-6">
+      <img src="images/logo.svg" class="inline max-sm:h-[35px] max-sm:w-[50px] max-sm:object-contain" alt="">
+
+      <ul class="inline-flex" id="menu"  style=" z-index: 2;">
+         <img src="images/icon-menu-close.svg" height="25px" width="25px" id="close" onclick="hide()" alt="">
+         <li class="ml-14 hover:text-red-600 hover:cursor-pointer max-sm:ml-0">Home</li>
+         <li class="ml-14 hover:text-red-600 hover:cursor-pointer max-sm:ml-0">New</li>
+         <li class="ml-14 hover:text-red-600 hover:cursor-pointer max-sm:ml-0">Popular</li>
+         <li class="ml-14 hover:text-red-600 hover:cursor-pointer max-sm:ml-0">Trending</li>
+         <li class="ml-14 hover:text-red-600 hover:cursor-pointer max-sm:ml-0">Categories</li>
+      </ul>
+   </div>
+
+   <div id="lash" onclick="show()">
+      <div style="z-index: 1;" class="border-black border-2 my-2 w-10"></div>
+      <div style="z-index: 1;" class="border-black border-2 my-2 w-10"></div>
+      <div style="z-index: 1;" class="border-black border-2 my-2 w-10"></div>
+   </div>
+
+   <!-- MAIN TOPICS -->
+   <div class="grid grid-cols-3 gap-5 mb-5 max-sm:grid-cols-1 max-sm:">
+
+      <!-- FIRST GRID -->
+      <div class=" col-span-2 max-sm:col-span-1 max-sm:order-1">
+         <img src="images/image-web-3-desktop.jpg" id="desk-view" class="object-fill" alt="">
+         <img src="images/image-web-3-mobile.jpg"  id="mobile-view" alt="">
+      </div>
+
+      <!-- SECOND GRID -->
+      <div style="background-color: rgb(4, 4, 34);" class="p-9 row-span-2 max-sm:row-span-1 max-sm:order-4 max-sm:p-5">
+         <h1 class="text-yellow-500 font-bold text-3xl">New</h1>
+         <section class="my-9">
+            <h3 class="text-2xl font-bold text-white my-3 max-sm:text-xl">Hydrogen VS Electric Cars</h3>
+            <p class="text-gray-400">Will hydrogen-fueled cars ever catch up to EVs?</p>
+         </section>
+         <hr>
+         <section class="my-9">
+            <h3 class="text-2xl font-bold text-white my-3 max-sm:text-xl">The Downsides of AI Artistry
+            </h3>
+            <p class="text-gray-400">What are the possible adverse effects of on-demand AI image generation?</p>
+         </section>
+         <hr>
+         <section class="my-9">
+            <h3 class="text-2xl font-bold text-white my-3 max-sm:text-xl">Is VC Funding Drying Up?</h3>
+            <p class="text-gray-400">Private funding by BC firms is down 50% YOY. We take a look at what that means.
+            </p>
+         </section>
+      </div>
+
+      <!-- THIRD GRID -->
+      <div class="font-bold text-7xl max-sm:order-2 max-sm:text-4xl">
+         The Bright Future of Web 3.0?
+      </div>
+
+      <!-- FOURTH GRID -->
+      <div class=" max-sm:order-3">
+         <p class="text-gray-600 text-xl max-sm:text-[16px]">We dive into the next evolution of the web that claims to
+            put the power of the platforms back into the hands of the people. But is it really fulfilling its promise?
+         </p>
+         <button
+            class="bg-red-600 text-white font-bold px-6 py-4 hover:cursor-pointer hover:bg-blue-950 transition-colors mt-10 max-sm:px-3 max-sm:py-2 max-sm:mt-5">READ
+            MORE</button>
+      </div>
+   </div>
+
+
+   <!-- SUB TOPICS -->
+   <div class="my-16 flex justify-between content-center max-sm:flex-col max-sm:gap-5">
+      <div class="w-[360px] grid grid-cols-2 max-sm:w-[300px] ">
+         <img src="images/image-retro-pcs.jpg" class="h-48 max-sm:h-40" alt="">
+         <div class="leading-50">
+            <h1 class="text-gray-300 font-bold text-4xl my-3 max-sm:mt-0 max-sm:text-3xl">01</h1>
+            <h3 class=" font-bold hover:text-red-600 hover:cursor-pointer mb-3 max-sm:mb-3 max-sm:text-[15px]">Reviving
+               Retro PCs</h3>
+            <p class="text-gray-500 max-sm:text-[14px]">What Happends when old PCs are give modern upgrades?</p>
+         </div>
+      </div>
+
+      <div class="w-[360px] grid grid-cols-2 max-sm:w-[300px]">
+         <img src="images/image-top-laptops.jpg" class="h-48 max-sm:h-40" alt="">
+         <div>
+            <h1 class="text-gray-300 font-bold text-4xl my-3 max-sm:mt-0 max-sm:text-3xl">02</h1>
+            <h3 class="font-bold hover:text-red-600 hover:cursor-pointer mb-3 max-sm:mb-3 max-sm:text-[14px]">Top 10
+               Laptops of 2022</h3>
+            <p class="text-gray-500 max-sm:text-[14px]">Our best picks for various needs and budgets</p>
+         </div>
+      </div>
+
+      <div class="w-[360px] grid grid-cols-2 max-sm:w-[300px]">
+         <img src="images/image-gaming-growth.jpg" class="h-48 max-sm:h-40" alt="">
+         <div>
+            <h1 class="text-gray-300 font-bold text-4xl my-3 max-sm:mt-0 max-sm:text-3xl">03</h1>
+            <h3 class="font-bold hover:text-red-600 hover:cursor-pointer mb-3 max-sm:mb-3 max-sm:text-[14px]">The Growth
+               of Gaming</h3>
+            <p class="text-gray-500 max-sm:text-[14px]">How the pandemic has sparked fresh opportunities.</p>
+         </div>
+      </div>
+   </div>
+
+
+   <!-- JAVASCRIPT -->
+    <script>
+      
+      function show(){
+        document.getElementById("body").style.backgroundColor="gray";
+        document.getElementById("menu").style.visibility="visible";
+      }
+
+      function hide(){
+         document.getElementById("menu").style.visibility="hidden";
+         document.getElementById("body").style.backgroundColor=""
+      }
+
+    </script>
+
+
+
+</body>
+
+</html>
